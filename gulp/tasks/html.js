@@ -13,6 +13,7 @@ export const html = () => {
     ))
     .pipe(fileinclude())
     .pipe(app.plugins.replace(/@img\//g, 'img/'))
+    .pipe(app.plugins.replace(/@js\//g, 'js/'))
     .pipe(webpHtmlNosvg())
     .pipe(
         versionNumber({
@@ -30,5 +31,6 @@ export const html = () => {
             }
         })
     )
-    .pipe(app.gulp.dest(app.path.build.html));
+    .pipe(app.gulp.dest(app.path.build.html))
+    .pipe(app.plugins.browsersync.stream());
 }
