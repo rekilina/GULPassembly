@@ -16,6 +16,7 @@ import {server} from "./gulp/tasks/server.js";
 import {scss} from "./gulp/tasks/scss.js"
 import {js} from "./gulp/tasks/js.js"
 import {images} from "./gulp/tasks/images.js"
+import {otfToTtf, ttfToWoff, fontsStyle} from "./gulp/tasks/fonts.js"
 
 // all task after reset, which operate in parallel
 function watcher() {
@@ -26,7 +27,9 @@ function watcher() {
     gulp.watch(path.watch.images, images);
 }
 
-const mainTask = gulp.parallel(copy, html, scss, js, images);
+const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle);
+
+const mainTask = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images));
 
 
 // Сценарий выполнения задач
