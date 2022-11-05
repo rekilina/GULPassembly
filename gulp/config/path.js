@@ -9,10 +9,13 @@ export const path = {
         js: `${buildFolder}/js/`,
         files: `${buildFolder}/files/`,
         html: `${buildFolder}/`,
+        images: `${buildFolder}/img/`,
         css: `${buildFolder}/css/`
     },
     src: {
         js: `${srcFolder}/js/app.js`,
+        images: `${srcFolder}/img/**/*.{jpg, jpeg, png, gif, webp}`,
+        svg: `${srcFolder}/**/*.svg`,
         files: `${srcFolder}/files/**/*.*`,
         html: `${srcFolder}/*.html`,
         scss: `${srcFolder}/scss/style.scss`
@@ -21,7 +24,8 @@ export const path = {
         js: `${srcFolder}/**/*js`,
         html: `${srcFolder}/**/*.html`,
         files: `${srcFolder}/files/**/*.*`,
-        scss: `${srcFolder}/scss/**/*.scss`
+        scss: `${srcFolder}/scss/**/*.scss`,
+        images: `${srcFolder}/img/**/*.{jpg, jpeg, png, gif, webp, svg, ico, gif}`,
     },
     clean: buildFolder,
     buildFolder: buildFolder,
