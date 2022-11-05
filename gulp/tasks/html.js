@@ -15,13 +15,13 @@ export const html = () => {
     .pipe(app.plugins.replace(/@img\//g, 'img/'))
     .pipe(app.plugins.replace(/@js\//g, 'js/'))
     .pipe(
-        app.plugins.if(
+        app.plugins.ifPlugin(
             app.isBuild,
             webpHtmlNosvg()
         )
     )
     .pipe(
-        app.plugins.if(
+        app.plugins.ifPlugin(
             app.isBuild,
             versionNumber({
                 "value": '%DT%',

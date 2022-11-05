@@ -14,7 +14,7 @@ export const images = () => {
     .pipe(app.gulp.dest(app.path.build.images))
     .pipe(app.gulp.src(app.path.src.images))
     .pipe(app.plugins.newer(app.path.build.images))
-    .pipe(app.plugins.if(
+    .pipe(app.plugins.ifPlugin(
         app.isBuild,
         imagemin({
             progressive: true,
