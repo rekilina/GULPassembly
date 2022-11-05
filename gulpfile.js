@@ -4,6 +4,8 @@ import {path} from "./gulp/config/path.js"
 import {plugins} from "./gulp/config/plugins.js"
 
 global.app = {
+    isBuild: process.argv.includes('--build'),
+    isDev: !process.argv.includes('--build'),
     path: path,
     gulp: gulp,
     plugins: plugins,
@@ -17,6 +19,7 @@ import {scss} from "./gulp/tasks/scss.js"
 import {js} from "./gulp/tasks/js.js"
 import {images} from "./gulp/tasks/images.js"
 import {otfToTtf, ttfToWoff, fontsStyle} from "./gulp/tasks/fonts.js"
+import {svgSprive} from "./gulp/tasks/svgSprite.js"
 
 // all task after reset, which operate in parallel
 function watcher() {
@@ -26,6 +29,9 @@ function watcher() {
     gulp.watch(path.watch.js, js);
     gulp.watch(path.watch.images, images);
 }
+
+// Я бы хотела назвать svgSprite, но это re-declaration
+export { svgSprive }
 
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle);
 
