@@ -9,7 +9,9 @@
     "svgSprite": "gulp svgSprite",
     "//run-svgSprite": "npm run svgSprite",
     "dev": "gulp",
-    "//run-dev": "npm run dev"
+    "//run-dev": "npm run dev",
+    "build": "gulp build --build",
+    "//run-build": "npm run build"
   },
   "repository": {
     "type": "git",
