@@ -13,14 +13,16 @@ import {copy} from "./gulp/tasks/copy.js";
 import {reset} from "./gulp/tasks/reset.js";
 import {html} from "./gulp/tasks/html.js";
 import {server} from "./gulp/tasks/server.js";
+import {scss} from "./gulp/tasks/scss.js"
 
 // all task after reset, which operate in parallel
 function watcher() {
     gulp.watch(path.watch.files, copy);
     gulp.watch(path.watch.html, html);
+    gulp.watch(path.watch.scss, scss);
 }
 
-const mainTask = gulp.parallel(copy, html);
+const mainTask = gulp.parallel(copy, html, scss);
 
 
 // Сценарий выполнения задач
