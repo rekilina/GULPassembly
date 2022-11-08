@@ -66,7 +66,7 @@ export const fontsStyle = () => {
                             fontWeight = 400;
                         }
                         fs.appendFile(fontsFile,
-                            `@font-face {\n\tfont-family: ${fontName};\n\tfont-display: swap;\n\tsrc: url(".../fonts/${fontFileName}.woff2") format("woff2"), url(".../fonts/${fontFileName}");\n\tfont-style: normal;\n}\r\n`, cb);
+                            `@font-face {\n\tfont-family: '${fontName}';\n\tfont-display: swap;\n\tsrc: url("../fonts/${fontFileName}.woff2") format("woff2"), url(".../fonts/${fontFileName}");\n\tfont-style: normal;\n}\r\n`, cb);
                         newFileOnly = fontFileName;    
                     }
                 }

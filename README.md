@@ -11,3 +11,9 @@ install plugin Path Autocomplete in VSCode
     "@js": "${folder}/src/js",
 },
 ```
+<br>
+<br>
+Error: Cannot find module 'webp-converter / cwebp'<br>
+Solution:<br>
+copy files from: `node_modules> webp-converter> src`
+in: `node_modules> webp-converter`
